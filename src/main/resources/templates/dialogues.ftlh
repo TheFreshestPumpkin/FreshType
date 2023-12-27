@@ -1,0 +1,44 @@
+<#assign userAuth=user.email??>
+<!DOCTYPE html>
+<html>
+    <head>
+        <#include "styles.css">
+        <title>FreshType</title>
+    </head>
+
+    <body>
+        <#if userAuth>
+            <div class="sidenav">
+                <#if userAuth>
+                    <form action="/logout" method="post">
+                        <input type="hidden" name="_csrf" value="${_csrf.token}">
+                        <input class="exit" type="submit" value="Выйти"/>
+                    </form>
+                <#else>
+                    <a href="/login">Войти</a></h1>
+                </#if>
+                <a href="/">${user.name}</a>
+                <a href="/dialogues">Мои чаты</a>
+                <a href="/allUsers">Найти собеседника</a>
+                <a href="/groups/${user.id}">Группы</a>
+            </div>
+        <#else>
+            <a href="/login">Войти</a></h1>
+        </#if>
+        <div class="main">
+            <#list dialogues as dialogue>
+                <div class="dialogue">
+                    <p>
+                        <form action="/dialogue/${dialogue.id}" method="get">
+                            <span class="dialName">${dialogue.name}</span>
+                            <input type="hidden" name="_csrf" value="${_csrf.token}">
+                            <input type="submit" value="Перейти в диалог"/>
+                        </form>
+
+                    </p>
+                </div>
+            </#list>
+            <hr>
+        </div>
+    </body>
+</HTML>
