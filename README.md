@@ -1,7 +1,6 @@
-# Gusar
+# Freshtype
 ### Application description
-Gusar is a barbershop web application where consumers have the opportunity to view the company's masters 
-and make an entry to them
+Freshtype is a social network, where user have the opportunity to chat, post, like and comment publications.
 
 ### Dependencies
 
