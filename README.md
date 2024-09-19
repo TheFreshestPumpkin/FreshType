@@ -1,6 +1,6 @@
 # Freshtype
 ### Application description
-Freshtype is a social network, where user have the opportunity to chat, post, like and comment publications.
+Freshtype is a social network, where user have the opportunity to chat, post, like and comment publications(only after authentification).
 
 ### Dependencies
 
